@@ -1,0 +1,106 @@
+{
+  "connection_test": {
+    "dimension": 1024,
+    "query_ok": true
+  },
+  "steps": [
+    {
+      "prompt": "Загрузи учебную страницу https://www.mathsisfun.com/algebra/linear-equations.html",
+      "tool_calls": [
+        {
+          "name": "add_learning_url",
+          "args": {
+            "url": "https://www.mathsisfun.com/algebra/linear-equations.html"
+          },
+          "id": "call_a97ae1010c8f4de089eb0d4a6a074593",
+          "type": "tool_call"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "add_learning_url",
+          "content": {
+            "source_url": "https://www.mathsisfun.com/algebra/linear-equations.html",
+            "title": "Linear Equations",
+            "characters": 3346,
+            "chunks": 5,
+            "dimension": 1024,
+            "model": "multilingual-e5-large",
+            "namespace": "vpg04-web",
+            "ids": [
+              "web-7280fa3748217116019e-000",
+              "web-7280fa3748217116019e-001",
+              "web-7280fa3748217116019e-002",
+              "web-7280fa3748217116019e-003",
+              "web-7280fa3748217116019e-004"
+            ]
+          }
+        }
+      ],
+      "answer": "Страница загружена: **Linear Equations**.  \nURL: https://www.mathsisfun.com/algebra/linear-equations.html  \nID фрагментов: `web-7280fa3748217116019e-000` – `web-7280fa3748217116019e-004`"
+    },
+    {
+      "prompt": "По загруженной странице объясни, какой график у линейного уравнения и чему равны наклон и пересечение с осью y в примере y = 2x + 1. Укажи источник.",
+      "tool_calls": [
+        {
+          "name": "search_knowledge",
+          "args": {
+            "question": "По странице Linear Equations: какой график у линейного уравнения? В форме y = mx + b объяснение наклона (slope) и пересечения с осью y; пример y = 2x + 1, значения наклона и y-intercept.",
+            "source_url": "https://www.mathsisfun.com/algebra/linear-equations.html"
+          },
+          "id": "call_cce5045b37524d4d95cccfe093ed46a3",
+          "type": "tool_call"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "search_knowledge",
+          "content": {
+            "matches": [
+              {
+                "id": "web-7280fa3748217116019e-002",
+                "score": 0.871841311,
+                "source_url": "https://www.mathsisfun.com/algebra/linear-equations.html"
+              },
+              {
+                "id": "web-7280fa3748217116019e-001",
+                "score": 0.858298421,
+                "source_url": "https://www.mathsisfun.com/algebra/linear-equations.html"
+              },
+              {
+                "id": "web-7280fa3748217116019e-000",
+                "score": 0.850859225,
+                "source_url": "https://www.mathsisfun.com/algebra/linear-equations.html"
+              }
+            ]
+          }
+        }
+      ],
+      "answer": "График линейного уравнения — **прямая линия**. В форме \\(y=mx+b\\) для примера \\(y=2x+1\\) наклон равен \\(m=2\\), а пересечение с осью \\(y\\) — \\(b=1\\) (точка \\((0,1)\\)).\n\n**Источник:** https://www.mathsisfun.com/algebra/linear-equations.html  \n**ID фрагментов:** `web-7280fa3748217116019e-000`, `web-7280fa3748217116019e-001`, `web-7280fa3748217116019e-002`"
+    },
+    {
+      "prompt": "Получи через API один факт о кошках.",
+      "tool_calls": [
+        {
+          "name": "get_cat_fact",
+          "args": {},
+          "id": "call_bb7aea61a1db41cabac429cebf36f46c",
+          "type": "tool_call"
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "get_cat_fact",
+          "content": {
+            "fact": "The life expectancy of cats has nearly doubled over the last fifty years.",
+            "source": "https://catfact.ninja/fact",
+            "method": "GET",
+            "status": 200,
+            "verification": "unverified_external_claim"
+          }
+        }
+      ],
+      "answer": "По данным внешнего API: за последние пятьдесят лет ожидаемая продолжительность жизни кошек почти удвоилась. Это утверждение не проверено; при необходимости его следует сверить с надёжными источниками. Источник: https://catfact.ninja/fact"
+    }
+  ]
+}
