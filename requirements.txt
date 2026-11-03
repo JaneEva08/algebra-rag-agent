@@ -1,0 +1,5 @@
+langchain==1.4.8
+langchain-openai==1.7.3
+python-dotenv==1.2.4
+requests==2.34.2
+beautifulsoup4==4.15.0
